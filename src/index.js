@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import rootReducer from './store/reducers'
-// import { BroswerRouter as Router} from 
+// import { BrowserRouter as Router} from 
 
 import 'bulma/css/bulma.css';
 import './styles.scss';
