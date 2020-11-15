@@ -1,20 +1,17 @@
-import React, { useState } from "react";
-
+import React from "react";
+import { useDispatch } from 'react-redux'
+import { connect } from 'react-redux'
+import { addFeature } from '../store/actions';
 const AdditionalFeature = (props) => {
-  console.log("Props from Additional Features components", props)
-  const [feature, setFeature] = useState({
-    name: props.feature.name,
-    price: props.feature.price,
-    id: props.feature.id,
-  });
+
+  const dispatch = useDispatch();
+
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}
       <button
         className="button"
-        onClick={() => {
-          props.addFeature(feature);
-        }}
+        onClick={() => dispatch(addFeature(props.feature))}
       >
         Add
       </button>
@@ -23,4 +20,4 @@ const AdditionalFeature = (props) => {
   );
 };
 
-export default AdditionalFeature;
+export default connect(null, { addFeature })(AdditionalFeature);
