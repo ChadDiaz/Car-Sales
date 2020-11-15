@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux'
 
 const Header = props => {
   return (
@@ -12,4 +13,13 @@ const Header = props => {
   );
 };
 
-export default Header;
+const mapStateToProps = state => {
+  console.log("MSTP in HEADER.JS file", state)
+  return {
+    additionalPrice: state.CSR.additionalPrice,
+    car: state.CSR.car,
+    additionalFeatures: state.CSR.additionalFeatures,
+  }
+}
+
+export default connect(mapStateToProps, {})(Header);
