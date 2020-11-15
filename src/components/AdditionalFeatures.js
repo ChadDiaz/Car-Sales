@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { addFeature } from "../store/actions";
 
 const AdditionalFeatures = (props) => {
-  // console.log("props from the additional Features comp. parent to AF", props)
+  console.log("props from the additional Features comp. parent to AF", props)
   return (
     <div className="content">
       <h4>Additional Features</h4>
