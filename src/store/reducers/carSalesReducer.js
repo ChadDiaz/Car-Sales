@@ -20,6 +20,13 @@ const initialState = {
 export const carSalesReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_FEATURE:
+      const newFeatures = [];
+      // eslint-disable-next-line array-callback-return
+      state.additionalFeatures.map((item) => {
+        if (item.id !== action.payload.id) {
+          newFeatures.push(item);
+        }
+      });
       return {
         ...state,
         additionalPrice: state.additionalPrice + action.payload.price,
@@ -27,8 +34,11 @@ export const carSalesReducer = (state = initialState, action) => {
           ...state.car,
           features: [...state.car.features, action.payload],
         },
+        additionalFeatures: newFeatures,
       };
     case DELETE_FEATURE:
+      const updatedFeature = state.car.features.filter((item) => item.id === action.payload.id)[0]
+      console.log("updatedFeature from reducer", updatedFeature)
       return {
         ...state,
         additionalPrice: state.additionalPrice - action.payload.price,
@@ -39,6 +49,7 @@ export const carSalesReducer = (state = initialState, action) => {
               (item) => item.id !== action.payload.id
             ),
           ],
+          additionalFeatures: state.additionalFeatures.push(updatedFeature)
         },
       };
     default:

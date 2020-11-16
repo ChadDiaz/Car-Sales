@@ -4,7 +4,7 @@ import { deleteFeature } from '../store/actions'
 
 
 const AddedFeature = props => {
-
+  console.log("props from added feature comp", props)
   const dispatch = useDispatch();
 
   return (
