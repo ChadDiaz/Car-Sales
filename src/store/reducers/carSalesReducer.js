@@ -21,10 +21,11 @@ export const carSalesReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_FEATURE:
       const newFeatures = [];
+      
       // eslint-disable-next-line array-callback-return
       state.additionalFeatures.map((item) => {
         if (item.id !== action.payload.id) {
-          newFeatures.push(item);
+         return newFeatures.push(item);
         }
       });
       return {
