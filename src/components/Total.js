@@ -13,7 +13,7 @@ const mapStateToProps = state => {
   return {
     additionalPrice: state.CSR.additionalPrice,
     car: state.CSR.car,
-    additionalFeatures: state.CSR.additionalFeatures,
+    // additionalFeatures: state.CSR.additionalFeatures,
   }
 }
 
