@@ -1,7 +1,7 @@
 import React from "react";
 import AdditionalFeature from "./AdditionalFeature";
 import { connect } from "react-redux";
-import { addFeature } from "../store/actions";
+// import { addFeature } from "../store/actions";
 
 const AdditionalFeatures = (props) => {
   console.log("props from the additional Features comp. parent to AF", props)
@@ -14,7 +14,7 @@ const AdditionalFeatures = (props) => {
             <AdditionalFeature
               key={item.id}
               feature={item}
-              addFeature={addFeature}
+              
             />
           ))}
         </ol>
