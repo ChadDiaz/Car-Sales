@@ -1,8 +1,8 @@
 export const addNewFeature = (feature) => {
-  dispatch({
+  return {
     type: "ADD_NEW_FEATURE",
     payload: feature,
-  });
+  };
 };
 
 export const deleteFeature = (feature) => {

@@ -1,5 +1,4 @@
 import React from "react";
-import { addNewFeature } from "../store/actions";
 
 const AdditionalFeature = (props) => {
   return (
@@ -7,7 +6,7 @@ const AdditionalFeature = (props) => {
       {/* Add an onClick that will let you add a feature to your car */}
       <button
         className="button"
-        onClick={() => console.log(addNewFeature(props.feature))}
+        onClick={() => props.addNewFeature(props.feature)}
       >
         Add
       </button>
